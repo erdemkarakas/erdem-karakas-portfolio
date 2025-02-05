@@ -68,7 +68,7 @@ const Experience = () => {
             description: 'Contributed to Commodity Exchange software development, creating accounting and management modules. Implemented IoT projects and provided on-site customer support across Turkey.',
             tech: ['C#', 'ASP.NET', 'DevExpress', 'MSSQL', 'Angular', 'Crystal Reports'],
             link: 'https://alpatateknoloji.com',
-            logo: '/images/companies/alpata-logo.png'
+            logo: !isDarkMode ? '/images/companies/alpata-logo-light.png' : '/images/companies/alpata-logo.png'
         },
     ];
 

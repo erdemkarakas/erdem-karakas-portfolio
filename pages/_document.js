@@ -28,13 +28,6 @@ export default function Document() {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@erdemmkarakas" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
-
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
         <link
@@ -75,7 +68,6 @@ export default function Document() {
               sameAs: [
                 "https://github.com/erdemkarakas",
                 "https://linkedin.com/in/erdemkarakas",
-                "https://twitter.com/erdemmkarakas",
               ],
               jobTitle: "Senior Frontend Developer",
               worksFor: {
