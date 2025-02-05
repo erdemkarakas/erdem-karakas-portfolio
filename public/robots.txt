@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://erdemkarakas.dev
+
+# Sitemaps
+Sitemap: https://erdemkarakas.dev/sitemap.xml 
