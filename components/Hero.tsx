@@ -90,18 +90,18 @@ const Hero = () => {
                         variants={itemVariants}
                         className="inline-block mb-8"
                     >
-                        <div className="relative w-48 h-48 mx-auto mb-8 [perspective:1000px]">
+                        <div className="relative w-60 h-64 mx-auto mb-4 [perspective:1000px]">
                             <div className={`absolute inset-0 bg-gradient-to-r ${isDarkMode
                                 ? 'from-blue-400 to-blue-600 opacity-50'
                                 : 'from-blue-600 to-blue-800 opacity-70'
-                                } rounded-full md:animate-spin-slow blur-md`} />
-                            <div className="relative rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl md:animate-coin-flip">
+                                } rounded-2xl md:animate-spin-slow blur-md`} />
+                            <div className="relative rounded-2xl overflow-hidden border-4 border-blue-500/30 shadow-xl md:animate-coin-flip">
                                 <Image
                                     src="/images/profile.png"
                                     alt="Erdem Karakaş"
-                                    width={192}
-                                    height={192}
-                                    className="rounded-full object-cover"
+                                    width={256}
+                                    height={384}
+                                    className="rounded-2xl object-contain w-full h-full"
                                     priority
                                 />
                             </div>
