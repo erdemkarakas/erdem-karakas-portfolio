@@ -94,8 +94,8 @@ const Hero = () => {
                             <div className={`absolute inset-0 bg-gradient-to-r ${isDarkMode
                                 ? 'from-blue-400 to-blue-600 opacity-50'
                                 : 'from-blue-600 to-blue-800 opacity-70'
-                                } rounded-full animate-spin-slow blur-md`} />
-                            <div className="relative rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl animate-coin-flip">
+                                } rounded-full md:animate-spin-slow blur-md`} />
+                            <div className="relative rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl md:animate-coin-flip">
                                 <Image
                                     src="/images/profile.png"
                                     alt="Erdem Karakaş"
@@ -229,8 +229,8 @@ const Hero = () => {
                             </footer>
                         </blockquote>
 
-                        {/* Animated Balls */}
-                        <div className="flex justify-center items-center gap-4">
+                        {/* Animated Balls - Hidden on mobile */}
+                        <div className="hidden md:flex justify-center items-center gap-4">
                             {[...Array(3)].map((_, i) => (
                                 <motion.div
                                     key={i}
