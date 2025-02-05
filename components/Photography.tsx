@@ -28,26 +28,25 @@ export default function Photography() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2,
+                staggerChildren: 0.1,
             },
         },
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            y: 0,
             transition: {
-                duration: 0.5,
+                duration: 0.3,
             },
         },
     };
 
     return (
         <section className={`py-20 relative ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`} id="photography">
-            {/* Dotted background pattern */}
-            <div className={`absolute inset-0 ${isDarkMode
+            {/* Dotted background pattern - Hidden on mobile */}
+            <div className={`absolute inset-0 hidden md:block ${isDarkMode
                 ? 'bg-[radial-gradient(circle,_#0369a1_2px,_transparent_2px)] opacity-[0.15]'
                 : 'bg-[radial-gradient(circle,_#1e40af_2px,_#f8fafc_2px)] opacity-[0.4]'
                 } bg-[length:24px_24px]`} />
@@ -85,7 +84,6 @@ export default function Photography() {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            whileHover={{ y: -5 }}
                             className="group relative h-[400px] md:h-[500px]"
                         >
                             <div className={`relative h-full w-full rounded-xl overflow-hidden shadow-xl ${isDarkMode ? 'shadow-blue-500/10' : 'shadow-blue-600/20'}`}>
@@ -93,15 +91,15 @@ export default function Photography() {
                                     src={photo.src}
                                     alt={photo.alt}
                                     fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                                     sizes="(max-width: 768px) 90vw, (max-width: 1200px) 33vw, 400px"
-                                    quality={90}
+                                    quality={85}
                                     priority={index === 0}
                                 />
                                 <div className={`absolute inset-0 bg-gradient-to-t ${isDarkMode
-                                    ? 'from-black/80 via-black/50 to-transparent'
-                                    : 'from-black/70 via-black/40 to-transparent'
-                                    } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                                    ? 'from-black/70 via-black/40 to-transparent'
+                                    : 'from-black/60 via-black/30 to-transparent'
+                                    } transition-opacity duration-300 opacity-0 md:group-hover:opacity-100`}>
                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                                         <p className="text-lg font-medium">{photo.description}</p>
                                     </div>
