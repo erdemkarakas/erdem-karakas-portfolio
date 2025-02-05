@@ -148,33 +148,33 @@ const Experience = () => {
                                     variants={itemVariants}
                                     className="relative md:pl-12"
                                 >
-                                    <div className={`${isDarkMode
-                                        ? 'bg-gray-800/50 hover:bg-gray-800/80'
-                                        : 'bg-white hover:bg-gray-50'
-                                        } rounded-lg shadow-lg p-4 md:p-6 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm`}
+                                    <a
+                                        href={exp.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block group"
                                     >
-                                        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                            <div className="flex items-center gap-3 md:gap-4">
-                                                {/* Company Logo */}
-                                                <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm flex-shrink-0">
-                                                    <Image
-                                                        src={exp.logo}
-                                                        alt={`${exp.company} logo`}
-                                                        fill
-                                                        className="object-contain p-1"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <h3 className={`text-lg md:text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                                                        <a
-                                                            href={exp.link}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className={`group inline-flex items-center hover:text-blue-500 transition-colors ${isDarkMode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}
-                                                        >
+                                        <div className={`${isDarkMode
+                                            ? 'bg-gray-800/50 hover:bg-gray-800/80'
+                                            : 'bg-white hover:bg-gray-50'
+                                            } rounded-lg shadow-lg p-4 md:p-6 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm relative`}
+                                        >
+                                            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                                <div className="flex items-center gap-3 md:gap-4">
+                                                    {/* Company Logo */}
+                                                    <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm flex-shrink-0">
+                                                        <Image
+                                                            src={exp.logo}
+                                                            alt={`${exp.company} logo`}
+                                                            fill
+                                                            className="object-contain p-1"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <h3 className={`text-lg md:text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'} group-hover:text-blue-500 transition-colors flex items-center gap-2`}>
                                                             {exp.company}
                                                             <svg
-                                                                className={`w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}
+                                                                className={`w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}
                                                                 fill="none"
                                                                 viewBox="0 0 24 24"
                                                                 stroke="currentColor"
@@ -186,41 +186,41 @@ const Experience = () => {
                                                                     d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
                                                                 />
                                                             </svg>
-                                                        </a>
-                                                    </h3>
-                                                    <p className="text-blue-400 font-medium text-sm md:text-base">
-                                                        {exp.position}
+                                                        </h3>
+                                                        <p className="text-blue-400 font-medium text-sm md:text-base">
+                                                            {exp.position}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="mt-2 md:mt-0">
+                                                    <p className={`text-sm md:text-base ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                                        {exp.period}
                                                     </p>
+                                                    {exp.location && (
+                                                        <p className={`text-xs md:text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-500'}`}>
+                                                            {exp.location}
+                                                        </p>
+                                                    )}
                                                 </div>
                                             </div>
-                                            <div className="mt-2 md:mt-0">
-                                                <p className={`text-sm md:text-base ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                                                    {exp.period}
-                                                </p>
-                                                {exp.location && (
-                                                    <p className={`text-xs md:text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-500'}`}>
-                                                        {exp.location}
-                                                    </p>
-                                                )}
+                                            <p className={`text-sm md:text-base mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                                {exp.description}
+                                            </p>
+                                            <div className="flex flex-wrap gap-1.5 md:gap-2">
+                                                {exp.tech.map((tech, techIndex) => (
+                                                    <span
+                                                        key={techIndex}
+                                                        className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm ${isDarkMode
+                                                            ? 'bg-blue-500/20 text-blue-300'
+                                                            : 'bg-blue-100 text-blue-800'
+                                                            }`}
+                                                    >
+                                                        {tech}
+                                                    </span>
+                                                ))}
                                             </div>
                                         </div>
-                                        <p className={`text-sm md:text-base mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                                            {exp.description}
-                                        </p>
-                                        <div className="flex flex-wrap gap-1.5 md:gap-2">
-                                            {exp.tech.map((tech, techIndex) => (
-                                                <span
-                                                    key={techIndex}
-                                                    className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm ${isDarkMode
-                                                        ? 'bg-blue-500/20 text-blue-300'
-                                                        : 'bg-blue-100 text-blue-800'
-                                                        }`}
-                                                >
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
+                                    </a>
                                 </motion.div>
                             ))}
                         </div>
