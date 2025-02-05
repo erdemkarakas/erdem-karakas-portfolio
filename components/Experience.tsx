@@ -109,52 +109,54 @@ const Experience = () => {
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className={`text-3xl font-bold mb-12 text-center ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
+                        className={`text-2xl md:text-3xl font-bold mb-12 text-center ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
                     >
                         Professional Experience
                     </motion.h2>
 
                     <div className="relative">
-                        {/* Timeline dots with year markers */}
-                        {experiences.map((exp, index) => (
-                            <div key={index} className="absolute left-8 transform -translate-x-1/2" style={{ top: `${index * 280}px` }}>
-                                <div className="w-8 h-8 rounded-full border-4 border-blue-500/30 bg-blue-500/20" />
-                                <div className={`absolute -left-12 top-1/2 -translate-y-1/2 text-sm font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                                    {exp.period.split('–')[0].trim().split('/')[1]}
+                        {/* Timeline dots with year markers - Hidden on mobile */}
+                        <div className="hidden md:block">
+                            {experiences.map((exp, index) => (
+                                <div key={index} className="absolute left-3 transform -translate-x-1/2" style={{ top: `${index * 256}px` }}>
+                                    <div className="w-6 h-6 rounded-full border-4 border-blue-500/30 bg-blue-500/20" />
+                                    <div className={`absolute -left-12 top-1/2 -translate-y-1/2 text-sm font-medium ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                        {exp.period.split('–')[0].trim().split('/')[1]}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
 
-                        {/* Timeline line segments */}
-                        {experiences.map((_, index) => (
-                            index < experiences.length - 1 && (
-                                <div
-                                    key={index}
-                                    className="absolute left-8 w-0.5 bg-blue-500/30"
-                                    style={{
-                                        top: `${index * 280 + 32}px`,
-                                        height: '248px'
-                                    }}
-                                />
-                            )
-                        ))}
+                            {/* Timeline line segments */}
+                            {experiences.map((_, index) => (
+                                index < experiences.length - 1 && (
+                                    <div
+                                        key={index}
+                                        className="absolute left-3 w-0.5 bg-blue-500/30"
+                                        style={{
+                                            top: `${index * 256 + 24}px`,
+                                            height: '232px'
+                                        }}
+                                    />
+                                )
+                            ))}
+                        </div>
 
-                        <div className="space-y-12">
+                        <div className="space-y-6">
                             {experiences.map((exp, index) => (
                                 <motion.div
                                     key={index}
                                     variants={itemVariants}
-                                    className="relative pl-20"
+                                    className="relative md:pl-12"
                                 >
                                     <div className={`${isDarkMode
                                         ? 'bg-gray-800/50 hover:bg-gray-800/80'
                                         : 'bg-white hover:bg-gray-50'
-                                        } rounded-lg shadow-lg p-8 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm`}
+                                        } rounded-lg shadow-lg p-4 md:p-6 transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm`}
                                     >
                                         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                                            <div className="flex items-center gap-4">
+                                            <div className="flex items-center gap-3 md:gap-4">
                                                 {/* Company Logo */}
-                                                <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm">
+                                                <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm flex-shrink-0">
                                                     <Image
                                                         src={exp.logo}
                                                         alt={`${exp.company} logo`}
@@ -163,7 +165,7 @@ const Experience = () => {
                                                     />
                                                 </div>
                                                 <div>
-                                                    <h3 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                                                    <h3 className={`text-lg md:text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                                                         <a
                                                             href={exp.link}
                                                             target="_blank"
@@ -186,30 +188,30 @@ const Experience = () => {
                                                             </svg>
                                                         </a>
                                                     </h3>
-                                                    <p className="text-blue-400 font-medium">
+                                                    <p className="text-blue-400 font-medium text-sm md:text-base">
                                                         {exp.position}
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div className="mt-2 md:mt-0 text-right">
-                                                <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                            <div className="mt-2 md:mt-0">
+                                                <p className={`text-sm md:text-base ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                                                     {exp.period}
                                                 </p>
                                                 {exp.location && (
-                                                    <p className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-500'}`}>
+                                                    <p className={`text-xs md:text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-500'}`}>
                                                         {exp.location}
                                                     </p>
                                                 )}
                                             </div>
                                         </div>
-                                        <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                        <p className={`text-sm md:text-base mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                                             {exp.description}
                                         </p>
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-1.5 md:gap-2">
                                             {exp.tech.map((tech, techIndex) => (
                                                 <span
                                                     key={techIndex}
-                                                    className={`px-3 py-1 rounded-full text-sm ${isDarkMode
+                                                    className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm ${isDarkMode
                                                         ? 'bg-blue-500/20 text-blue-300'
                                                         : 'bg-blue-100 text-blue-800'
                                                         }`}

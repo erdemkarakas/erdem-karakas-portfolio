@@ -150,23 +150,27 @@ const Contact = () => {
 
                     <motion.div
                         variants={itemVariants}
-                        className="flex justify-center space-x-6 mb-12"
+                        className="flex justify-center space-x-4 md:space-x-6 mb-12"
                     >
                         {socialLinks.map((link, index) => (
-                            <a
+                            <motion.a
                                 key={index}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`${isDarkMode
-                                    ? 'text-gray-400 hover:text-blue-400'
-                                    : 'text-gray-600 hover:text-blue-600'
-                                    } transition-colors`}
+                                className={`p-2 md:p-3 rounded-lg ${isDarkMode
+                                    ? 'text-gray-400 hover:text-blue-400 hover:bg-blue-500/10'
+                                    : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                                    } transition-all`}
                                 aria-label={`Visit ${link.name} profile`}
                             >
                                 <span className="sr-only">{link.name}</span>
-                                {link.icon}
-                            </a>
+                                <div className="w-5 h-5 md:w-6 md:h-6">
+                                    {link.icon}
+                                </div>
+                            </motion.a>
                         ))}
                     </motion.div>
 
@@ -174,18 +178,20 @@ const Contact = () => {
                         variants={itemVariants}
                         className="flex justify-center"
                     >
-                        <button
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                             onClick={handleEmailClick}
-                            className={`px-8 py-4 rounded-lg font-medium text-white transition-all transform hover:-translate-y-1 ${isDarkMode
+                            className={`px-6 md:px-8 py-3 md:py-4 rounded-lg font-medium text-white transition-all ${isDarkMode
                                 ? 'bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30'
                                 : 'bg-blue-600 hover:bg-blue-700'
                                 } flex items-center space-x-2`}
                         >
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            <span>Send Me an Email</span>
-                        </button>
+                            <span className="text-sm md:text-base">Send Me an Email</span>
+                        </motion.button>
                     </motion.div>
                 </motion.div>
             </div>

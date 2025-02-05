@@ -19,11 +19,11 @@ const Skills = () => {
                 </svg>
             ),
             skills: [
-                { name: 'React', level: 95, description: 'Building modern, responsive web applications with React ecosystem' },
-                { name: 'Next.js', level: 90, description: 'Server-side rendering and static site generation for React applications' },
-                { name: 'TypeScript', level: 85, description: 'Type-safe JavaScript development with enhanced IDE support' },
-                { name: 'Svelte', level: 80, description: 'Lightweight and efficient UI development' },
-                { name: 'JavaScript', level: 95, description: 'Core language for web development with modern ES6+ features' },
+                { name: 'React', description: 'Building modern, responsive web applications with React ecosystem' },
+                { name: 'Next.js', description: 'Server-side rendering and static site generation for React applications' },
+                { name: 'TypeScript', description: 'Type-safe JavaScript development with enhanced IDE support' },
+                { name: 'Svelte', description: 'Lightweight and efficient UI development' },
+                { name: 'JavaScript', description: 'Core language for web development with modern ES6+ features' },
             ],
         },
         {
@@ -34,11 +34,11 @@ const Skills = () => {
                 </svg>
             ),
             skills: [
-                { name: 'Tailwind CSS', level: 90, description: 'Utility-first CSS framework for rapid UI development' },
-                { name: 'Material UI', level: 85, description: 'React components implementing Material Design' },
-                { name: 'Chakra UI', level: 85, description: 'Accessible and customizable component library' },
-                { name: 'SCSS/SASS', level: 90, description: 'Advanced CSS preprocessing with variables and mixins' },
-                { name: 'Styled Components', level: 85, description: 'CSS-in-JS styling solution for React components' },
+                { name: 'Tailwind CSS', description: 'Utility-first CSS framework for rapid UI development' },
+                { name: 'Material UI', description: 'React components implementing Material Design' },
+                { name: 'Chakra UI', description: 'Accessible and customizable component library' },
+                { name: 'SCSS/SASS', description: 'Advanced CSS preprocessing with variables and mixins' },
+                { name: 'Styled Components', description: 'CSS-in-JS styling solution for React components' },
             ],
         },
         {
@@ -50,11 +50,11 @@ const Skills = () => {
                 </svg>
             ),
             skills: [
-                { name: 'Git', level: 90, description: 'Version control and collaboration with Git' },
-                { name: 'Jest', level: 85, description: 'JavaScript testing framework with snapshot testing' },
-                { name: 'Vitest', level: 80, description: 'Next generation testing framework for Vite' },
-                { name: 'Docker', level: 75, description: 'Containerization for consistent development environments' },
-                { name: 'Webpack', level: 80, description: 'Module bundling and build optimization' },
+                { name: 'Git', description: 'Version control and collaboration with Git' },
+                { name: 'Jest', description: 'JavaScript testing framework with snapshot testing' },
+                { name: 'Vitest', description: 'Next generation testing framework for Vite' },
+                { name: 'Docker', description: 'Containerization for consistent development environments' },
+                { name: 'Webpack', description: 'Module bundling and build optimization' },
             ],
         },
     ];
@@ -126,25 +126,29 @@ const Skills = () => {
                                                 <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>
                                                     {skill.name}
                                                 </span>
-                                                <span className={isDarkMode ? 'text-gray-400' : 'text-gray-500'}>
-                                                    {skill.level}%
-                                                </span>
+                                                <div className="flex items-center">
+                                                    <svg
+                                                        className={`w-5 h-5 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth={2}
+                                                            d="M5 13l4 4L19 7"
+                                                        />
+                                                    </svg>
+                                                </div>
                                             </div>
-                                            <div className={`w-full ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'} rounded-full h-2 relative`}>
-                                                <motion.div
-                                                    className="bg-blue-500 h-2 rounded-full relative group-hover/skill:shadow-lg group-hover/skill:shadow-blue-500/50 transition-all duration-300"
-                                                    initial={{ width: 0 }}
-                                                    animate={{ width: `${skill.level}%` }}
-                                                    transition={{ duration: 1, delay: 0.2 }}
-                                                />
-                                                {/* Tooltip */}
-                                                <div className="absolute left-1/2 -translate-x-1/2 -top-12 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 pointer-events-none">
-                                                    <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} p-2 rounded-lg shadow-lg text-sm max-w-xs`}>
-                                                        <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
-                                                            {skill.description}
-                                                        </p>
-                                                        <div className={`absolute left-1/2 -bottom-2 w-4 h-4 -translate-x-1/2 rotate-45 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`} />
-                                                    </div>
+                                            {/* Tooltip */}
+                                            <div className="absolute left-1/2 -translate-x-1/2 -top-12 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                                <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} p-2 rounded-lg shadow-lg text-sm max-w-xs`}>
+                                                    <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+                                                        {skill.description}
+                                                    </p>
+                                                    <div className={`absolute left-1/2 -bottom-2 w-4 h-4 -translate-x-1/2 rotate-45 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`} />
                                                 </div>
                                             </div>
                                         </div>
