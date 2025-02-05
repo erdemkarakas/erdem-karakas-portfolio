@@ -108,11 +108,11 @@ const Hero = () => {
                 <div className="absolute inset-0">
                     <motion.div
                         animate={{
-                            scale: [1, 1.2, 1],
-                            rotate: [0, 90, 0],
+                            scale: [1, 1.1, 1],
+                            rotate: [0, 45, 0],
                         }}
                         transition={{
-                            duration: 20,
+                            duration: 30,
                             repeat: Infinity,
                             ease: "linear"
                         }}
@@ -120,11 +120,11 @@ const Hero = () => {
                     />
                     <motion.div
                         animate={{
-                            scale: [1, 1.3, 1],
-                            rotate: [0, -90, 0],
+                            scale: [1, 1.15, 1],
+                            rotate: [0, -45, 0],
                         }}
                         transition={{
-                            duration: 15,
+                            duration: 25,
                             repeat: Infinity,
                             ease: "linear"
                         }}
@@ -133,13 +133,13 @@ const Hero = () => {
                 </div>
             )}
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-5">
                 <div className={`text-center relative z-10 rounded-2xl ${!isDarkMode && 'bg-white/10 backdrop-blur-sm shadow-xl p-8'}`}>
                     <motion.div
                         variants={itemVariants}
                         className="inline-block mb-8"
                     >
-                        <div className="relative w-48 h-64 sm:w-60 sm:h-72 mx-auto mb-4 [perspective:1000px]">
+                        <div className="relative w-40 h-42 sm:w-60 sm:h-60 mx-auto md:mb-4 [perspective:1000px]">
                             {!isMobile && (
                                 <motion.div
                                     className={`absolute inset-0 bg-gradient-to-r ${isDarkMode
@@ -147,28 +147,16 @@ const Hero = () => {
                                         : 'from-blue-600 to-blue-800 opacity-70'
                                         } rounded-2xl blur-md`}
                                     animate={{
-                                        scale: [1, 1.2, 1],
-                                        rotate: [0, 360, 0],
+                                        scale: [1, 1.05, 1],
                                     }}
                                     transition={{
-                                        duration: 8,
+                                        duration: 15,
                                         repeat: Infinity,
                                         ease: "linear"
                                     }}
                                 />
                             )}
-                            <motion.div
-                                className="relative rounded-2xl overflow-hidden border-4 border-blue-500/30 shadow-xl"
-                                animate={!isMobile ? {
-                                    rotateY: [-15, 15, -15],
-                                    rotateX: [-7, 7, -7],
-                                } : {}}
-                                transition={!isMobile ? {
-                                    duration: 6,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                } : {}}
-                            >
+                            <div className="relative rounded-2xl overflow-hidden border-4 border-blue-500/30 shadow-xl">
                                 <Image
                                     src="/images/profile.png"
                                     alt="Erdem Karakaş"
@@ -179,7 +167,7 @@ const Hero = () => {
                                     quality={90}
                                     priority
                                 />
-                            </motion.div>
+                            </div>
                             {!isMobile && (
                                 <motion.div
                                     className={`absolute inset-0 bg-gradient-to-r ${isDarkMode
@@ -187,11 +175,10 @@ const Hero = () => {
                                         : 'from-blue-600/20 to-blue-800/20'
                                         } rounded-2xl blur-lg -z-10`}
                                     animate={{
-                                        scale: [1.1, 1, 1.1],
-                                        rotate: [0, -360, 0],
+                                        scale: [1.05, 1, 1.05],
                                     }}
                                     transition={{
-                                        duration: 10,
+                                        duration: 20,
                                         repeat: Infinity,
                                         ease: "linear"
                                     }}
