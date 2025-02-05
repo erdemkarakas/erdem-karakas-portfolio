@@ -270,14 +270,14 @@ const Hero = () => {
                     repeat: Infinity,
                     repeatType: "reverse",
                 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center items-center w-full"
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
             >
-                <div className="w-6 h-10 border-2 border-blue-500/30 rounded-full flex justify-center">
-                    <div className="w-1 h-2 bg-blue-500/30 rounded-full mt-2" />
+                <div className={`w-6 h-10 border-2 ${isDarkMode ? 'border-blue-400' : 'border-blue-600'} rounded-full flex justify-center`}>
+                    <div className={`w-1.5 h-3 ${isDarkMode ? 'bg-blue-400' : 'bg-blue-600'} rounded-full mt-2 animate-bounce`} />
                 </div>
             </motion.div>
         </motion.section>
     );
 };
 
-export default Hero; 
+export default Hero;
