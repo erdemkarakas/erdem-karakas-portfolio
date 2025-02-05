@@ -45,7 +45,7 @@ export default function Photography() {
     };
 
     return (
-        <section className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`} id="photography">
+        <section className={`py-20 relative ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`} id="photography">
             {/* Dotted background pattern */}
             <div className={`absolute inset-0 ${isDarkMode
                 ? 'bg-[radial-gradient(circle,_#0369a1_2px,_transparent_2px)] opacity-[0.15]'
@@ -79,22 +79,23 @@ export default function Photography() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
                 >
                     {photos.map((photo, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            whileHover={{ y: -10 }}
-                            className="group relative"
+                            whileHover={{ y: -5 }}
+                            className="group relative h-[400px] md:h-[500px]"
                         >
-                            <div className={`relative aspect-[9/16] rounded-xl overflow-hidden shadow-xl ${isDarkMode ? 'shadow-blue-500/10' : 'shadow-blue-600/20'}`}>
+                            <div className={`relative h-full w-full rounded-xl overflow-hidden shadow-xl ${isDarkMode ? 'shadow-blue-500/10' : 'shadow-blue-600/20'}`}>
                                 <Image
                                     src={photo.src}
                                     alt={photo.alt}
                                     fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 33vw, 400px"
+                                    quality={90}
                                     priority={index === 0}
                                 />
                                 <div className={`absolute inset-0 bg-gradient-to-t ${isDarkMode

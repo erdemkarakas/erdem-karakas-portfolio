@@ -135,23 +135,53 @@ const Hero = () => {
                         variants={itemVariants}
                         className="inline-block mb-8"
                     >
-                        <div className="relative w-60 h-64 mx-auto mb-4 [perspective:1000px]">
+                        <div className="relative w-48 h-64 sm:w-60 sm:h-72 mx-auto mb-4 [perspective:1000px]">
                             <div className={`absolute inset-0 bg-gradient-to-r ${isDarkMode
                                 ? 'from-blue-400 to-blue-600 opacity-50'
                                 : 'from-blue-600 to-blue-800 opacity-70'
-                                } rounded-2xl md:animate-spin-slow blur-md`} />
-                            <div className="relative rounded-2xl overflow-hidden border-4 border-blue-500/30 shadow-xl md:animate-coin-flip">
+                                } rounded-2xl hidden md:block md:animate-spin-slow blur-md`} />
+                            <div className="relative rounded-2xl overflow-hidden border-4 border-blue-500/30 shadow-xl">
                                 <Image
                                     src="/images/profile.png"
                                     alt="Erdem Karakaş"
-                                    width={256}
-                                    height={384}
-                                    className="rounded-2xl object-contain w-full h-full"
+                                    width={240}
+                                    height={320}
+                                    className="rounded-2xl object-cover w-full h-full"
+                                    sizes="(max-width: 768px) 192px, (max-width: 1200px) 240px, 320px"
+                                    quality={90}
                                     priority
                                 />
                             </div>
                         </div>
                     </motion.div>
+
+                    {/* Animated background shapes - Hidden on mobile */}
+                    <div className="absolute inset-0 hidden md:block">
+                        <motion.div
+                            animate={{
+                                scale: [1, 1.2, 1],
+                                rotate: [0, 90, 0],
+                            }}
+                            transition={{
+                                duration: 20,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                            className={`absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl ${isDarkMode ? 'bg-blue-500/10' : 'bg-blue-100/50'}`}
+                        />
+                        <motion.div
+                            animate={{
+                                scale: [1, 1.3, 1],
+                                rotate: [0, -90, 0],
+                            }}
+                            transition={{
+                                duration: 15,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                            className={`absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl ${isDarkMode ? 'bg-blue-400/10' : 'bg-blue-50/80'}`}
+                        />
+                    </div>
 
                     <motion.h1
                         variants={itemVariants}
