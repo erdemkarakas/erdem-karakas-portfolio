@@ -311,7 +311,7 @@ const Hero = () => {
                                         }}
                                         transition={{
                                             duration: 2,
-                                            repeat: Infinity,
+                                            repeat: 2,
                                             delay: i * 0.3,
                                             ease: "easeInOut"
                                         }}
