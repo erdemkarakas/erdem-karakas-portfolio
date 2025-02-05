@@ -47,14 +47,13 @@ const Hero = () => {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'
-                }`}
+            className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}
             id="about"
         >
             {/* Dotted background pattern */}
             <div className={`absolute inset-0 ${isDarkMode
                 ? 'bg-[radial-gradient(circle,_#0369a1_2px,_transparent_2px)] opacity-[0.15]'
-                : 'bg-[radial-gradient(circle,_#1e40af_2px,_#f8fafc_2px)] opacity-[0.4]'
+                : 'bg-[radial-gradient(circle,_#1e40af_1px,_transparent_1px)] opacity-[0.08]'
                 } bg-[length:24px_24px]`} />
 
             {/* Animated background shapes */}
@@ -69,8 +68,7 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "linear"
                     }}
-                    className={`absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl ${isDarkMode ? 'bg-blue-500/10' : 'bg-blue-600/20'
-                        }`}
+                    className={`absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl ${isDarkMode ? 'bg-blue-500/10' : 'bg-blue-100/50'}`}
                 />
                 <motion.div
                     animate={{
@@ -82,13 +80,12 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "linear"
                     }}
-                    className={`absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl ${isDarkMode ? 'bg-blue-400/10' : 'bg-blue-500/20'
-                        }`}
+                    className={`absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl ${isDarkMode ? 'bg-blue-400/10' : 'bg-blue-50/80'}`}
                 />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-                <div className="text-center relative z-10">
+                <div className={`text-center relative z-10 rounded-2xl ${!isDarkMode && 'bg-white/10 backdrop-blur-sm shadow-xl p-8'}`}>
                     <motion.div
                         variants={itemVariants}
                         className="inline-block mb-8"
