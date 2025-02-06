@@ -27,7 +27,7 @@ const Experience = () => {
             position: 'Frontend Developer',
             period: '01/2024 – 08/2024',
             location: 'İstanbul, Turkey',
-            description: 'Cloud-based headless commerce platform developer with an integrated next-generation application suite including marketplace capabilities.Some brands: Crocs, Koton, US Polo, Kelebek, Doğtaş, Emirates',
+            description: 'Cloud-based headless commerce platform developer with an integrated next-generation application suite including marketplace capabilities.\nSome brands: Crocs, Koton, US Polo, Kelebek, Doğtaş, Emirate',
             tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'i18next', 'Vitest'],
             link: 'https://akinon.com',
             logo: '/images/companies/akinon-logo.png'
@@ -206,7 +206,11 @@ const Experience = () => {
                                                 </div>
                                             </div>
                                             <p className={`text-sm md:text-base mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                                                {exp.description}
+                                                {exp.description.split('\n').map((text, i) => (
+                                                    <span key={i} className="block mb-2 last:mb-0">
+                                                        {text}
+                                                    </span>
+                                                ))}
                                             </p>
                                             <div className="flex flex-wrap gap-1.5 md:gap-2">
                                                 {exp.tech.map((tech, techIndex) => (
