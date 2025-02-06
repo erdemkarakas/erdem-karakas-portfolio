@@ -38,7 +38,7 @@ const Hero = () => {
     const techStack = [
         {
             name: 'React',
-            color: 'from-cyan-400/80 to-cyan-600/80',
+            color: isDarkMode ? 'from-cyan-400/80 to-cyan-600/80' : 'from-cyan-500 to-cyan-700',
             link: 'https://react.dev',
             logo: (
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -48,7 +48,7 @@ const Hero = () => {
         },
         {
             name: 'Next.js',
-            color: 'from-gray-600/80 to-gray-800/80',
+            color: isDarkMode ? 'from-gray-600/80 to-gray-800/80' : 'from-gray-700 to-gray-900',
             link: 'https://nextjs.org',
             logo: (
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -58,7 +58,7 @@ const Hero = () => {
         },
         {
             name: 'TypeScript',
-            color: 'from-blue-500/80 to-blue-700/80',
+            color: isDarkMode ? 'from-blue-500/80 to-blue-700/80' : 'from-blue-600 to-blue-800',
             link: 'https://www.typescriptlang.org',
             logo: (
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -68,7 +68,7 @@ const Hero = () => {
         },
         {
             name: 'Svelte',
-            color: 'from-orange-500/80 to-orange-700/80',
+            color: isDarkMode ? 'from-orange-500/80 to-orange-700/80' : 'from-orange-600 to-orange-800',
             link: 'https://svelte.dev',
             logo: (
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -78,7 +78,7 @@ const Hero = () => {
         },
         {
             name: 'Tailwind',
-            color: 'from-teal-400/80 to-teal-600/80',
+            color: isDarkMode ? 'from-teal-400/80 to-teal-600/80' : 'from-teal-500 to-teal-700',
             link: 'https://tailwindcss.com',
             logo: (
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -225,7 +225,7 @@ const Hero = () => {
                                 rel="noopener noreferrer"
                                 className="relative group"
                             >
-                                <div className={`relative px-6 py-3 rounded-lg bg-gradient-to-r ${isDarkMode ? tech.color : tech.color.replace('/80', '')} 
+                                <div className={`relative px-6 py-3 rounded-lg bg-gradient-to-r ${tech.color} 
                                     text-white font-medium shadow-lg backdrop-blur-sm flex items-center gap-2 transition-transform hover:-translate-y-1`}>
                                     {tech.logo}
                                     {tech.name}
