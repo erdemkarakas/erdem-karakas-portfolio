@@ -43,25 +43,64 @@ const Header = () => {
                     </motion.div>
 
                     {/* Desktop menu */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        {menuItems.map((item) => (
-                            <motion.div
-                                key={item.name}
-                                whileHover={{ y: -2 }}
-                                whileTap={{ y: 0 }}
-                            >
-                                <a
-                                    href={item.href}
-                                    onClick={(e) => handleClick(e, item.href)}
-                                    className={`transition-colors cursor-pointer ${isDarkMode
-                                        ? 'text-gray-300 hover:text-blue-400'
-                                        : 'text-gray-700 hover:text-blue-600'
-                                        }`}
+                    <div className="hidden md:flex items-center">
+                        <nav className="flex items-center mr-8">
+                            <ul className="flex items-center gap-6">
+                                {menuItems.slice(0, -1).map((item) => (
+                                    <motion.li
+                                        key={item.name}
+                                        className="relative"
+                                        whileHover="hover"
+                                    >
+                                        <motion.a
+                                            href={item.href}
+                                            onClick={(e) => handleClick(e, item.href)}
+                                            className={`relative px-2 py-1 ${isDarkMode
+                                                ? 'text-gray-300'
+                                                : 'text-gray-700'} 
+                                                font-medium hover:text-blue-500 transition-colors`}
+                                        >
+                                            {item.name}
+                                            <motion.div
+                                                className="absolute -bottom-1.5 left-0 h-0.5 w-full bg-blue-500 origin-left"
+                                                initial={{ scaleX: 0 }}
+                                                variants={{
+                                                    hover: {
+                                                        scaleX: 1,
+                                                        transition: {
+                                                            type: "spring",
+                                                            stiffness: 400,
+                                                            damping: 25
+                                                        }
+                                                    }
+                                                }}
+                                            />
+                                        </motion.a>
+                                    </motion.li>
+                                ))}
+                                <motion.li
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="relative"
                                 >
-                                    {item.name}
-                                </a>
-                            </motion.div>
-                        ))}
+                                    <a
+                                        href="/#contact"
+                                        onClick={(e) => handleClick(e, '/#contact')}
+                                        className={`group relative overflow-hidden rounded-xl px-6 py-3 
+                                            ${isDarkMode
+                                                ? 'bg-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-500'
+                                                : 'bg-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-400'} 
+                                            text-white transition-all duration-300 ease-out
+                                            hover:ring-2 hover:ring-blue-500 hover:ring-offset-2
+                                            ${isDarkMode ? 'hover:ring-offset-gray-900' : 'hover:ring-offset-white'}`}
+                                    >
+
+                                        <span className="relative font-medium">Contact</span>
+                                    </a>
+                                </motion.li>
+                            </ul>
+                        </nav>
+                        <div className={`h-8 w-px ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'} mx-4`} />
                         <ThemeToggle />
                     </div>
 
