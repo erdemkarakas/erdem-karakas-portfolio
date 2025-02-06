@@ -1,7 +1,7 @@
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import React from "react";
 import Head from "next/head";
-import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,23 +10,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      {/* Google Analytics */}
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-      />
-      <Script strategy="lazyOnload" id="ga-script">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
-
       <Component {...pageProps} />
+      <GoogleTagManager gtmId="GTM-5HWGVGC7" />
     </>
   );
 }

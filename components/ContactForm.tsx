@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import useThemeStore from '../store/useThemeStore';
+import useThemeStore from '@/store/useThemeStore';
 
 const ContactForm = () => {
     const { isDarkMode } = useThemeStore();

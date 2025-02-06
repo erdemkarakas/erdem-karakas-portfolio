@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import useThemeStore from '../store/useThemeStore';
+import useThemeStore from '@/store/useThemeStore';
 
 const ThemeToggle = () => {
     const { isDarkMode, toggleTheme } = useThemeStore();

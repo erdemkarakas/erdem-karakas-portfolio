@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import useThemeStore from "../store/useThemeStore";
+import useThemeStore from "@/store/useThemeStore";
 
 export default function Photography() {
     const { isDarkMode } = useThemeStore();

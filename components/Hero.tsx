@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
-import useThemeStore from '../store/useThemeStore';
-import useIsMobile from '../hooks/useIsMobile';
+import useThemeStore from '@/store/useThemeStore';
+import useIsMobile from '@/hooks/useIsMobile';
 
 const Hero = () => {
     const [ref, inView] = useInView({

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
-import ThemeToggle from './ThemeToggle';
-import useThemeStore from '../store/useThemeStore';
+import ThemeToggle from '@/components/ThemeToggle';
+import useThemeStore from '@/store/useThemeStore';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);

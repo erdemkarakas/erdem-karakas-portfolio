@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import useThemeStore from '../store/useThemeStore';
+import useThemeStore from '@/store/useThemeStore';
 
 const Skills = () => {
     const [ref, inView] = useInView({
