@@ -81,7 +81,7 @@ const Skills = () => {
     };
 
     return (
-        <section className={`py-20 relative ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`} id="skills">
+        <section className={`pt-10 pb-20 relative ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`} id="skills">
             {/* Dotted background pattern */}
             {isDarkMode && (
                 <div className="absolute inset-0 bg-[radial-gradient(circle,_#0369a1_2px,_transparent_2px)] bg-[length:24px_24px] opacity-[0.15]" />

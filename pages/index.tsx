@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import Education from '../components/Education';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
 import Photography from '../components/Photography';
@@ -37,6 +38,7 @@ export default function Home() {
                 <main>
                     <Hero />
                     <Experience />
+                    <Education />
                     <Skills />
                     <Photography />
                     <Contact />
