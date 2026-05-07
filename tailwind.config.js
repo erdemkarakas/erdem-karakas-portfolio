@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -7,38 +8,56 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#0074de",
-        secondary: "#69778c",
-        dark: "#1a1a1a",
+        ink: {
+          DEFAULT: "#0a0a0a",
+          muted: "#404040",
+          subtle: "#525252",
+        },
+        canvas: {
+          DEFAULT: "#fafafa",
+          raised: "#ffffff",
+          line: "#d4d4d8",
+        },
+        night: {
+          DEFAULT: "#0a0a0a",
+          raised: "#141414",
+          line: "#2a2a2a",
+          ink: "#f5f5f5",
+          muted: "#d4d4d8",
+        },
+        accent: "#3b82f6",
       },
       fontFamily: {
-        sans: ["Inter var", "system-ui", "-apple-system", "BlinkMacSystemFont"],
+        sans: [
+          "var(--font-geist-sans)",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
+        mono: [
+          "var(--font-geist-mono)",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "monospace",
+        ],
+      },
+      letterSpacing: {
+        tightish: "-0.015em",
+        tighter2: "-0.04em",
+      },
+      maxWidth: {
+        prose: "640px",
+        page: "720px",
       },
       animation: {
-        gradient: "gradient 8s linear infinite",
-        "slide-up": "slideUp 0.5s ease-out",
-        "spin-slow": "spin 8s linear infinite",
-        "coin-flip": "coinFlip 2s ease-out",
+        "fade-in": "fadeIn 0.6s ease-out forwards",
       },
       keyframes: {
-        gradient: {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center",
-          },
-        },
-        slideUp: {
-          "0%": { transform: "translateY(20px)", opacity: 0 },
-          "100%": { transform: "translateY(0)", opacity: 1 },
-        },
-        coinFlip: {
-          "0%": { transform: "rotateY(0deg) scale(0.5)", opacity: 0 },
-          "60%": { transform: "rotateY(1080deg) scale(1)", opacity: 1 },
-          "100%": { transform: "rotateY(1080deg) scale(1)", opacity: 1 },
+        fadeIn: {
+          "0%": { opacity: 0, transform: "translateY(8px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
         },
       },
     },

@@ -1,9 +1,10 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /og
 
 # Host
 Host: https://erdemkarakas.dev
 
 # Sitemaps
-Sitemap: https://erdemkarakas.dev/sitemap.xml 
+Sitemap: https://erdemkarakas.dev/sitemap.xml
