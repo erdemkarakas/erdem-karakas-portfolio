@@ -3,7 +3,7 @@ import { stack } from '@/data/portfolio';
 
 const Stack = () => (
     <Section id="stack" eyebrow="03 / Stack">
-        <dl className="space-y-5">
+        <dl className="space-y-4">
             {Object.entries(stack).map(([group, items]) => (
                 <div
                     key={group}

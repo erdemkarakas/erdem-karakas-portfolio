@@ -9,12 +9,12 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="border-t border-canvas-line dark:border-night-line py-8">
+        <footer className="border-t border-canvas-line dark:border-night-line py-6">
             <p className="font-mono text-[11.5px] leading-[1.6] text-ink-muted dark:text-night-muted">
                 {signals.join(' · ')}
             </p>
 
-            <div className="mt-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+            <div className="mt-4 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
                 <p className="font-mono text-[11.5px] text-ink-muted dark:text-night-muted">
                     © {new Date().getFullYear()} {personal.name}
                 </p>

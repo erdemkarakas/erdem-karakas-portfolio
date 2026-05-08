@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="light"
-      enableSystem={false}
+      defaultTheme="system"
+      enableSystem={true}
       disableTransitionOnChange
     >
       <Head>
