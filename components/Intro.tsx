@@ -7,8 +7,8 @@ const Intro = () => {
     const links = socials.filter((s) => primaryLinks.includes(s.name));
 
     return (
-        <section id="top" className="pt-16 pb-20 sm:pt-24 sm:pb-28">
-            <div className="mb-6">
+        <section id="top" className="pt-10 pb-12 sm:pt-14 sm:pb-16">
+            <div className="mb-5">
                 <StatusPill label={personal.status.label} tone={personal.status.tone} />
             </div>
 
@@ -20,17 +20,17 @@ const Intro = () => {
                 {personal.role}.
             </p>
 
-            <div className="mt-9 max-w-prose space-y-5 text-[16px] sm:text-[17px] leading-[1.7] text-ink dark:text-night-ink">
+            <div className="mt-7 max-w-prose space-y-4 text-[16px] sm:text-[17px] leading-[1.7] text-ink dark:text-night-ink">
                 {intro.bio.map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                 ))}
             </div>
 
-            <p className="mt-5 max-w-prose font-mono text-[12.5px] text-ink-muted dark:text-night-muted">
+            <p className="mt-4 max-w-prose font-mono text-[12.5px] text-ink-muted dark:text-night-muted">
                 {intro.context}
             </p>
 
-            <ul className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[13px] font-medium">
+            <ul className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[13px] font-medium">
                 {links.map((s) => (
                     <li key={s.name}>
                         <a

@@ -3,7 +3,7 @@ import { work } from '@/data/portfolio';
 
 const Work = () => (
     <Section id="work" eyebrow="01 / Work">
-        <ul className="space-y-8">
+        <ul className="space-y-6">
             {work.map((w) => {
                 const inner = (
                     <>

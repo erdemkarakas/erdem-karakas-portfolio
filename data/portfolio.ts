@@ -12,14 +12,13 @@ export const personal = {
 
 export const intro = {
   bio: [
-    "I've always seen myself as more than just a UI developer. I'm a product-minded engineer who loves bridging the gap between complex logic and seamless user experience. While my heart beats for sharp interfaces and refined frontend details, I'm equally at home building robust full-stack solutions; shipping things end-to-end is where I'm most effective.",
-    "My toolkit is centered around React, Next.js, and TypeScript, but my focus is always on the problem at hand. Whether it's architecting real-time trading platforms or optimizing e-commerce flows, I thrive on the challenge of making software feel fast, look right, and actually solve the user's pain points. I believe the best work happens at the intersection of engineering, design, and product, which is why I work closely with cross-functional teams to get the small details right.",
+    "I've always seen myself as more than just a UI developer. I'm a product-minded engineer who loves bridging the gap between complex logic and seamless user experience. While my heart beats for sharp interfaces and refined frontend details, I'm equally at home architecting robust full-stack solutions with React, Next.js, and TypeScript. Whether I'm building real-time trading platforms or e-commerce systems, I thrive on shipping products from start to finish so they feel fast, look right, and solve the actual problem at hand. I work closely with design and product teams to refine every detail, focusing on work that changes how people interact with technology.",
   ],
   context: "Currently building at Machinarium · Based in Berlin.",
 };
 
 export const availability = {
-  permit: "Blue Card",
+  permit: "Valid work visa",
   languages: ["English C1", "German A2"],
   workMode: "Open to remote, hybrid, or onsite",
 };
@@ -104,20 +103,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Eve Shop",
-    description:
-      "A React Native shopping app I helped take from buggy to production-grade. After I joined the team, errors and crashes dropped by ~90% across the device matrix.",
-    stack: ["React Native", "TypeScript", "Redux"],
-    status: "Live",
-  },
-  {
-    title: "Merchant Panel",
-    description:
-      "A merchant dashboard built for the Dubai market. Next.js + TypeScript on the surface, Tailwind for UI, Redux for scalable state, and a reusable component architecture so every team ships fast.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
-    status: "Live",
-  },
-  {
     title: "Boyner",
     description:
       "Frontend work for one of Turkey's largest fashion e-commerce platforms. Millions of users, peak-hour traffic, and serious shopping volume across web and mobile.",
@@ -128,8 +113,25 @@ export const projects: Project[] = [
   {
     title: "Stablex",
     description:
-      "Frontend for a crypto trading platform backed by Akbank. Real-time market data, fast trade flows, and a UI trustworthy enough to put bank capital behind it.",
+      "Frontend for a crypto trading platform backed by Akbank. I designed the project architecture from scratch and shipped the surface layer: real-time market data, fast trade flows, and a UI trustworthy enough to put bank capital behind it.",
     stack: ["TypeScript", "Next.js", "Redux Toolkit", "WebSockets"],
+    link: "https://stablex.com.tr/",
+    status: "Live",
+  },
+  {
+    title: "Eve Shop",
+    description:
+      "A React Native shopping app I helped take from buggy to production-grade. After I joined the team, errors and crashes dropped by ~90% across the device matrix.",
+    stack: ["React Native", "TypeScript", "Redux"],
+    link: "https://www.eveshop.com.tr/",
+    status: "Live",
+  },
+  {
+    title: "Dara Merchant Panel",
+    description:
+      "A merchant dashboard built for the Dubai market. Next.js + TypeScript on the surface, Tailwind for UI, Redux for scalable state, and a reusable component architecture so every team ships fast.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
+    link: "https://thedara.co/",
     status: "Live",
   },
 ];
