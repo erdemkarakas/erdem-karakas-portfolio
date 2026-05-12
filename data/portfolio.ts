@@ -54,9 +54,9 @@ export const work: WorkItem[] = [
     start: "01/2024",
     end: "08/2024",
     summary:
-      "Worked on a headless commerce platform used by brands like Crocs, Koton, US Polo, and Doğtaş.",
+      "Headless commerce platform powering brands like Crocs, Koton, US Polo, and Doğtaş.",
     highlights: [
-      "Migrated legacy storefronts to Next.js across multi-brand projects, improving performance metrics by 50%+.",
+      "Migrated multi-brand storefronts to Next.js with 50%+ performance gains.",
     ],
     tech: ["TypeScript", "Next.js", "Tailwind CSS", "Vitest"],
     link: "https://akinon.com",
@@ -67,7 +67,7 @@ export const work: WorkItem[] = [
     start: "01/2023",
     end: "11/2023",
     summary:
-      "Built real-time forex platforms with Socket.IO and Next.js, plus a CRM with role-based access. Shipped CSR and SSR side by side with performance budgets.",
+      "Real-time forex platforms (Socket.IO + Next.js) and a CRM with role-based access, shipped under tight performance budgets.",
     tech: ["TypeScript", "Next.js", "Socket.IO", "Redux Toolkit", "Recharts"],
     link: "https://overcodex.com",
   },
@@ -77,7 +77,7 @@ export const work: WorkItem[] = [
     start: "07/2022",
     end: "01/2023",
     summary:
-      "Built a real estate management platform with pixel-perfect Figma implementation, Google Maps integration, and cross-browser support.",
+      "Real estate management platform — pixel-perfect Figma builds, Google Maps integration, full cross-browser support.",
     tech: ["React", "Next.js", "Chakra UI", "Tailwind CSS", "Firebase"],
     link: "https://guvenlekirala.com",
   },
@@ -87,7 +87,7 @@ export const work: WorkItem[] = [
     start: "02/2020",
     end: "04/2021",
     summary:
-      "Worked on commodity exchange software, including accounting and management modules. Also helped with IoT integrations and on-site customer support.",
+      "Commodity exchange software — accounting and management modules, plus IoT integrations and on-site customer support.",
     tech: ["C#", "ASP.NET", "Angular", "MSSQL"],
     link: "https://alpatateknoloji.com",
   },
@@ -105,7 +105,7 @@ export const projects: Project[] = [
   {
     title: "Boyner",
     description:
-      "Frontend work for one of Turkey's largest fashion e-commerce platforms. Millions of users, peak-hour traffic, and serious shopping volume across web and mobile.",
+      "Frontend for one of Turkey's largest fashion e-commerce platforms — millions of users, peak-hour traffic, real shopping volume.",
     stack: ["React", "Next.js", "Redux Toolkit", "SCSS"],
     link: "https://www.boyner.com.tr",
     status: "Live",
@@ -113,7 +113,7 @@ export const projects: Project[] = [
   {
     title: "Stablex",
     description:
-      "Frontend for a crypto trading platform backed by Akbank. I designed the project architecture from scratch and shipped the surface layer: real-time market data, fast trade flows, and a UI trustworthy enough to put bank capital behind it.",
+      "Akbank-backed crypto trading platform — architected from scratch, real-time market data, fast trade flows, UI trustworthy enough for bank capital.",
     stack: ["TypeScript", "Next.js", "Redux Toolkit", "WebSockets"],
     link: "https://stablex.com.tr/",
     status: "Live",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
   {
     title: "Dara Merchant Panel",
     description:
-      "A merchant dashboard built for the Dubai market. Next.js + TypeScript on the surface, Tailwind for UI, Redux for scalable state, and a reusable component architecture so every team ships fast.",
+      "Merchant dashboard for the Dubai market, built on a reusable component architecture so every team ships fast.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
     link: "https://thedara.co/",
     status: "Live",
@@ -164,7 +164,7 @@ export const stack = {
   Database: ["PostgreSQL", "MSSQL", "Firebase", "Redis"],
   "AI & LLMs": [
     "OpenAI",
-    "Anthropic Claude",
+    "Anthropic",
     "LangChain",
     "Vercel AI SDK",
     "RAG pipelines",
