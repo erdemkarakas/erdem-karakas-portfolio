@@ -15,7 +15,7 @@ const MoonIcon = () => (
 );
 
 const ThemeToggle = () => {
-    const { resolvedTheme, setTheme } = useTheme();
+    const { resolvedTheme, systemTheme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => setMounted(true), []);
@@ -24,14 +24,15 @@ const ThemeToggle = () => {
 
     const toggle = () => {
         const next = isDark ? 'light' : 'dark';
+        const target = next === systemTheme ? 'system' : next;
         const supportsViewTransition =
             typeof document !== 'undefined' &&
             'startViewTransition' in document;
         if (supportsViewTransition) {
             (document as Document & { startViewTransition: (cb: () => void) => void })
-                .startViewTransition(() => setTheme(next));
+                .startViewTransition(() => setTheme(target));
         } else {
-            setTheme(next);
+            setTheme(target);
         }
     };
 

@@ -6,6 +6,7 @@ import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "next-themes";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
+import CommandPalette from "@/components/CommandPalette";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <div className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
         <Component {...pageProps} />
+        <CommandPalette />
       </div>
       <GoogleTagManager gtmId="GTM-5HWGVGC7" />
       <Analytics />

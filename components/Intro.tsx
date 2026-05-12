@@ -9,7 +9,7 @@ const Intro = () => {
     return (
         <section id="top" className="pt-10 pb-12 sm:pt-14 sm:pb-16">
             <div className="mb-5">
-                <StatusPill label={personal.status.label} tone={personal.status.tone} />
+                <StatusPill label={personal.status.label} tone={personal.status.tone} href="#contact" />
             </div>
 
             <h1 className="text-[46px] leading-[1.02] sm:text-[60px] font-semibold tracking-[-0.035em] text-ink dark:text-night-ink">
