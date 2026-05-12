@@ -3,7 +3,7 @@ import { work } from '@/data/portfolio';
 
 const Work = () => (
     <Section id="work" eyebrow="01 / Work">
-        <ul className="space-y-6">
+        <ul className="space-y-3">
             {work.map((w) => {
                 const inner = (
                     <>
@@ -57,12 +57,14 @@ const Work = () => (
                                 href={w.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group block -mx-4 rounded-lg px-4 py-2 transition-colors hover:bg-canvas-raised dark:hover:bg-night-raised"
+                                className="group block rounded-lg border border-canvas-line bg-canvas-raised p-5 transition-colors hover:border-ink/30 dark:border-night-line dark:bg-night-raised dark:hover:border-night-ink/30"
                             >
                                 {inner}
                             </a>
                         ) : (
-                            <div className="-mx-4 px-4 py-2">{inner}</div>
+                            <div className="group block rounded-lg border border-canvas-line bg-canvas-raised p-5 dark:border-night-line dark:bg-night-raised">
+                                {inner}
+                            </div>
                         )}
                     </li>
                 );

@@ -20,9 +20,17 @@ const Footer = () => {
                 </p>
                 <div className="flex items-center gap-4">
                     <LocalTime />
-                    <span
-                        className="hidden sm:inline-flex items-center gap-1 font-mono text-[11.5px] text-ink-muted dark:text-night-muted"
-                        aria-hidden="true"
+                    <button
+                        type="button"
+                        onClick={() => {
+                            if (typeof window !== 'undefined') {
+                                window.dispatchEvent(
+                                    new KeyboardEvent('keydown', { key: 'k', metaKey: true, bubbles: true })
+                                );
+                            }
+                        }}
+                        aria-label="Open command palette"
+                        className="hidden sm:inline-flex items-center gap-1 font-mono text-[11.5px] text-ink-muted hover:text-ink dark:text-night-muted dark:hover:text-night-ink transition-colors"
                     >
                         <kbd className="rounded border border-canvas-line bg-canvas-raised px-1.5 py-0.5 text-[10px] dark:border-night-line dark:bg-night-raised">
                             ⌘
@@ -30,7 +38,7 @@ const Footer = () => {
                         <kbd className="rounded border border-canvas-line bg-canvas-raised px-1.5 py-0.5 text-[10px] dark:border-night-line dark:bg-night-raised">
                             K
                         </kbd>
-                    </span>
+                    </button>
                 </div>
             </div>
         </footer>

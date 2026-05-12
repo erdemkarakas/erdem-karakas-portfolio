@@ -5,7 +5,7 @@ export const personal = {
   timezone: "Europe/Berlin",
   email: "erdemkarakas26@gmail.com",
   status: {
-    label: "Available for work",
+    label: "Open to chats",
     tone: "positive" as const,
   },
 };
