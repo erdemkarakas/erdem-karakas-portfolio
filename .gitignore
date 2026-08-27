@@ -37,3 +37,5 @@ public/feed.xml
 
 # claude code local config
 .claude/
+# typescript incremental build info
+*.tsbuildinfo

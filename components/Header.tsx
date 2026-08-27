@@ -4,6 +4,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 const navItems = [
     { name: 'work', href: '#work' },
     { name: 'projects', href: '#projects' },
+    { name: 'principles', href: '#principles' },
     { name: 'stack', href: '#stack' },
     { name: 'contact', href: '#contact' },
 ];
@@ -39,7 +40,7 @@ const Header = () => {
                     onClick={(e) => handleClick(e, '#top')}
                     className="font-mono text-[13.5px] font-medium tracking-tight text-ink dark:text-night-ink"
                 >
-                    erdem karakaş
+                    <span aria-hidden="true" className="prompt">~/</span>erdem karakas
                 </a>
 
                 <div className="flex items-center gap-1 sm:gap-2">
@@ -49,7 +50,7 @@ const Header = () => {
                                 <a
                                     href={item.href}
                                     onClick={(e) => handleClick(e, item.href)}
-                                    className="rounded-md px-2.5 py-1 font-mono text-[12.5px] text-ink-muted hover:text-ink dark:text-night-muted dark:hover:text-night-ink"
+                                    className="rounded-md px-2.5 py-1 font-mono text-[12.5px] text-ink-muted transition-colors hover:text-accent dark:text-night-muted dark:hover:text-accent-dark"
                                 >
                                     {item.name}
                                 </a>
