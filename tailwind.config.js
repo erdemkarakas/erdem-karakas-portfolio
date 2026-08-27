@@ -25,7 +25,11 @@ module.exports = {
           ink: "#f5f5f5",
           muted: "#d4d4d8",
         },
-        accent: "#3b82f6",
+        accent: {
+          // amber-700, not amber-600: 5.0:1 on #fff, so 12px accent text passes WCAG AA
+          DEFAULT: "#b45309",
+          dark: "#f59e0b",
+        },
       },
       fontFamily: {
         sans: [
@@ -49,15 +53,20 @@ module.exports = {
       },
       maxWidth: {
         prose: "640px",
-        page: "720px",
+        page: "880px",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
+        blink: "blink 1.1s steps(2, start) infinite",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0, transform: "translateY(8px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        blink: {
+          "0%, 100%": { opacity: 1 },
+          "50%": { opacity: 0 },
         },
       },
     },

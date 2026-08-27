@@ -36,7 +36,9 @@ const CommandPalette = () => {
         () => [
             { id: 'go-work', group: 'Navigate', label: 'Go to Work', keywords: 'experience jobs', run: () => scrollToId('work') },
             { id: 'go-projects', group: 'Navigate', label: 'Go to Projects', keywords: 'portfolio selected', run: () => scrollToId('projects') },
+            { id: 'go-principles', group: 'Navigate', label: 'Go to Principles', keywords: 'how i work values engineering', run: () => scrollToId('principles') },
             { id: 'go-stack', group: 'Navigate', label: 'Go to Stack', keywords: 'tech tools skills', run: () => scrollToId('stack') },
+            { id: 'go-availability', group: 'Navigate', label: 'Go to Availability', keywords: 'visa work permit languages german relocation', run: () => scrollToId('availability') },
             { id: 'go-contact', group: 'Navigate', label: 'Go to Contact', keywords: 'email reach out chat', run: () => scrollToId('contact') },
             { id: 'go-top', group: 'Navigate', label: 'Back to top', keywords: 'home intro', run: () => scrollToId('top') },
             { id: 'theme-light', group: 'Theme', label: 'Light theme', run: () => setTheme('light') },
@@ -142,7 +144,7 @@ const CommandPalette = () => {
             <div className="absolute inset-0 bg-canvas/70 backdrop-blur-sm dark:bg-night/70" aria-hidden="true" />
             <div className="relative w-full max-w-md overflow-hidden rounded-xl border border-canvas-line bg-canvas-raised shadow-2xl dark:border-night-line dark:bg-night-raised">
                 <div className="flex items-center gap-2 border-b border-canvas-line px-4 dark:border-night-line">
-                    <span aria-hidden="true" className="font-mono text-[12px] text-ink-muted dark:text-night-muted">
+                    <span aria-hidden="true" className="prompt text-[12px]">
                         ›
                     </span>
                     <input
@@ -184,10 +186,10 @@ const CommandPalette = () => {
                                             a.run();
                                             close();
                                         }}
-                                        className={`flex w-full items-center justify-between gap-3 px-4 py-2 text-left text-[13.5px] transition-colors ${
+                                        className={`flex w-full items-center justify-between gap-3 border-l-2 px-4 py-2 text-left text-[13.5px] transition-colors ${
                                             isActive
-                                                ? 'bg-canvas text-ink dark:bg-night dark:text-night-ink'
-                                                : 'text-ink dark:text-night-ink'
+                                                ? 'border-accent bg-accent/10 text-accent dark:border-accent-dark dark:bg-accent-dark/10 dark:text-accent-dark'
+                                                : 'border-transparent text-ink dark:text-night-ink'
                                         }`}
                                     >
                                         <span>{a.label}</span>

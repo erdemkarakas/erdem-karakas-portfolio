@@ -3,17 +3,20 @@ import { ReactNode } from 'react';
 type Props = {
     id: string;
     eyebrow: string;
-    title?: string;
+    heading: string;
     children: ReactNode;
 };
 
-const Section = ({ id, eyebrow, title, children }: Props) => (
-    <section id={id} className="border-t border-canvas-line dark:border-night-line py-10 sm:py-12">
-        <div className="mb-6 flex items-baseline justify-between">
-            <span className="eyebrow">{eyebrow}</span>
-            {title && (
-                <span className="font-mono text-[12px] text-ink-muted dark:text-night-muted">{title}</span>
-            )}
+const Section = ({ id, eyebrow, heading, children }: Props) => (
+    <section id={id} className="border-t border-canvas-line py-11 dark:border-night-line sm:py-14">
+        <div className="mb-7">
+            <span className="eyebrow normal-case tracking-[0.04em]">
+                <span className="prompt">~/</span>
+                {eyebrow}
+            </span>
+            <h2 className="mt-2 text-[22px] font-semibold tracking-[-0.025em] text-ink dark:text-night-ink sm:text-[26px]">
+                {heading}
+            </h2>
         </div>
         {children}
     </section>

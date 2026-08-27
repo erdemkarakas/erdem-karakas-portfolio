@@ -49,7 +49,15 @@
   }
 
   .link {
-    @apply underline decoration-canvas-line dark:decoration-night-line decoration-[1.5px] underline-offset-[5px] hover:decoration-ink dark:hover:decoration-night-ink;
+    @apply underline decoration-canvas-line dark:decoration-night-line decoration-[1.5px] underline-offset-[5px] hover:text-accent dark:hover:text-accent-dark hover:decoration-accent dark:hover:decoration-accent-dark transition-colors;
+  }
+
+  .prompt {
+    @apply font-mono text-accent dark:text-accent-dark;
+  }
+
+  .cursor-blink {
+    @apply inline-block animate-blink text-accent dark:text-accent-dark;
   }
 }
 
@@ -66,5 +74,70 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  /* No downloadable CV, so the page itself has to print like one. */
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  .dark body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  header,
+  footer button,
+  [role="dialog"] {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  section {
+    border-color: #ccc !important;
+    padding-top: 0.6cm !important;
+    padding-bottom: 0.6cm !important;
+    break-inside: avoid;
+  }
+
+  h1 {
+    font-size: 24pt !important;
+  }
+
+  h2 {
+    font-size: 14pt !important;
+  }
+
+  h3 {
+    font-size: 11pt !important;
+  }
+
+  li,
+  .rounded-lg,
+  dl > div {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  /* Recruiters print to PDF and lose the hrefs otherwise. */
+  #contact a[href^="http"]::after,
+  #contact a[href^="mailto"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    word-break: break-all;
   }
 }

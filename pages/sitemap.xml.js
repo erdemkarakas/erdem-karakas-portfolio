@@ -6,7 +6,9 @@ function generateSiteMap() {
     { loc: SITE_URL, priority: "1.0", changefreq: "weekly" },
     { loc: `${SITE_URL}/#work`, priority: "0.8", changefreq: "monthly" },
     { loc: `${SITE_URL}/#projects`, priority: "0.8", changefreq: "monthly" },
+    { loc: `${SITE_URL}/#principles`, priority: "0.6", changefreq: "monthly" },
     { loc: `${SITE_URL}/#stack`, priority: "0.6", changefreq: "monthly" },
+    { loc: `${SITE_URL}/#availability`, priority: "0.7", changefreq: "monthly" },
     { loc: `${SITE_URL}/#contact`, priority: "0.6", changefreq: "monthly" },
   ];
 

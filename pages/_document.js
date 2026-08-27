@@ -1,10 +1,10 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { personal, seo } from "@/data/portfolio";
 
 const SITE = {
-  title: "Erdem Karakaş · Software Engineer",
-  description:
-    "Product-minded frontend engineer based in Berlin. I build full-stack web products with React, Next.js, TypeScript, Python, and AI tooling — Anthropic Claude, OpenAI, LangChain, RAG, MCP, and Claude Code in daily flow.",
-  url: "https://erdemkarakas.dev",
+  title: seo.title,
+  description: seo.description,
+  url: seo.url,
   type: "website",
   locale: "en_US",
 };
@@ -18,11 +18,8 @@ export default function Document() {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
         <meta name="description" content={SITE.description} />
-        <meta name="author" content="Erdem Karakaş" />
-        <meta
-          name="keywords"
-          content="Erdem Karakaş, Erdem Karakas, software engineer, product engineer, frontend engineer, full-stack engineer, frontend developer Berlin, React developer, Next.js developer, TypeScript engineer, Python developer, AI engineer, Anthropic Claude, OpenAI, LangChain, RAG, MCP, Claude Code, Cursor, freelance frontend Berlin"
-        />
+        <meta name="author" content={personal.name} />
+        <meta name="keywords" content={seo.keywords.join(", ")} />
         <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
         <meta name="format-detection" content="telephone=no" />
@@ -34,13 +31,13 @@ export default function Document() {
         <meta property="og:type" content={SITE.type} />
         <meta property="og:locale" content={SITE.locale} />
         <meta property="og:url" content={SITE.url} />
-        <meta property="og:site_name" content="Erdem Karakaş" />
+        <meta property="og:site_name" content={personal.name} />
         <meta property="og:title" content={SITE.title} />
         <meta property="og:description" content={SITE.description} />
         <meta property="og:image" content={`${SITE.url}/og.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Erdem Karakaş · Software Engineer" />
+        <meta property="og:image:alt" content={SITE.title} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -62,19 +59,24 @@ export default function Document() {
         {/* Sitemap */}
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
-        {/* Structured Data — Person */}
+        {/* Structured Data — ProfilePage wrapping the Person */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Erdem Karakaş",
-              alternateName: "Erdem Karakas",
+              "@type": "ProfilePage",
               url: SITE.url,
-              image: `${SITE.url}/og.png`,
-              jobTitle: "Software Engineer",
+              inLanguage: "en",
+              mainEntity: {
+              "@type": "Person",
+              name: personal.name,
+              alternateName: "Erdem Karakaş",
+              url: SITE.url,
+              image: `${SITE.url}${personal.photo}`,
+              jobTitle: personal.role,
               description: SITE.description,
+              email: `mailto:${personal.email}`,
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Berlin",
@@ -85,22 +87,39 @@ export default function Document() {
                 name: "Machinarium",
                 url: "https://www.machinarium.co/",
               },
+              knowsLanguage: [
+                { "@type": "Language", name: "Turkish" },
+                { "@type": "Language", name: "English" },
+                { "@type": "Language", name: "German" },
+              ],
               sameAs: [
                 "https://github.com/erdemkarakas",
                 "https://linkedin.com/in/erdemkarakas",
               ],
               knowsAbout: [
+                "Full-stack Development",
                 "Product Engineering",
                 "Frontend Engineering",
-                "Full-stack Development",
+                "Backend Engineering",
+                "TypeScript",
+                "JavaScript",
                 "React",
                 "Next.js",
-                "TypeScript",
+                "React Native",
+                "Node.js",
+                "Express",
+                "FastAPI",
                 "Python",
                 "C#",
+                "ASP.NET",
+                "PostgreSQL",
+                "MSSQL",
+                "Redis",
+                "REST APIs",
+                "GraphQL",
+                "WebSockets",
                 "Tailwind CSS",
                 "Web Performance",
-                "UI/UX",
                 "AI Development",
                 "Anthropic Claude",
                 "OpenAI",
@@ -108,9 +127,9 @@ export default function Document() {
                 "RAG",
                 "Vercel AI SDK",
                 "Claude Code",
-                "Cursor",
                 "MCP",
               ],
+              },
             }),
           }}
         />
@@ -122,12 +141,12 @@ export default function Document() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Erdem Karakaş",
+              name: personal.name,
               url: SITE.url,
               inLanguage: "en",
               author: {
                 "@type": "Person",
-                name: "Erdem Karakaş",
+                name: personal.name,
                 url: SITE.url,
               },
             }),

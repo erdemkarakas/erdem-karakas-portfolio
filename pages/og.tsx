@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { personal } from '@/data/portfolio';
+import { metrics, personal } from '@/data/portfolio';
 
 // Hidden render-only route used to generate /public/og.png via screenshot.
 // Rendered at exactly 1200x630.
@@ -27,102 +27,159 @@ const OG = () => (
                 style={{
                     width: '100%',
                     height: '100%',
-                    padding: '72px 80px',
+                    padding: '64px 72px',
                     display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
+                    gap: 56,
                     boxSizing: 'border-box',
                     border: '1px solid #d4d4d8',
                 }}
             >
-                {/* Top row: name + status pill */}
+                {/* Left: copy */}
                 <div
                     style={{
+                        flex: 1,
                         display: 'flex',
-                        alignItems: 'center',
+                        flexDirection: 'column',
                         justifyContent: 'space-between',
                     }}
                 >
-                    <span
-                        className="font-mono"
+                    <div
                         style={{
-                            fontSize: 22,
-                            color: '#0a0a0a',
-                            fontWeight: 500,
-                            letterSpacing: '-0.005em',
-                        }}
-                    >
-                        erdem karakaş
-                    </span>
-                    <span
-                        className="font-mono"
-                        style={{
-                            display: 'inline-flex',
+                            display: 'flex',
                             alignItems: 'center',
-                            gap: 10,
-                            padding: '8px 16px',
-                            borderRadius: 9999,
-                            border: '1px solid #d4d4d8',
-                            background: '#ffffff',
-                            color: '#404040',
-                            fontSize: 16,
+                            gap: 16,
                         }}
                     >
                         <span
+                            className="font-mono"
                             style={{
-                                width: 8,
-                                height: 8,
-                                borderRadius: 9999,
-                                background: '#10b981',
-                                display: 'inline-block',
+                                fontSize: 20,
+                                color: '#0a0a0a',
+                                fontWeight: 500,
+                                letterSpacing: '-0.005em',
                             }}
-                        />
-                        {personal.status.label}
-                    </span>
-                </div>
+                        >
+                            erdem karakas
+                        </span>
+                        <span
+                            className="font-mono"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: 9,
+                                padding: '7px 14px',
+                                borderRadius: 9999,
+                                border: '1px solid #d4d4d8',
+                                background: '#ffffff',
+                                color: '#404040',
+                                fontSize: 14,
+                            }}
+                        >
+                            <span
+                                style={{
+                                    width: 7,
+                                    height: 7,
+                                    borderRadius: 9999,
+                                    background: '#10b981',
+                                    display: 'inline-block',
+                                }}
+                            />
+                            {personal.status.label}
+                        </span>
+                    </div>
 
-                {/* Middle: title + tagline */}
-                <div>
-                    <h1
+                    <div>
+                        <h1
+                            style={{
+                                margin: 0,
+                                fontSize: 76,
+                                fontWeight: 600,
+                                color: '#0a0a0a',
+                                letterSpacing: '-0.04em',
+                                lineHeight: 1,
+                            }}
+                        >
+                            {personal.role}.
+                        </h1>
+                        <p
+                            style={{
+                                margin: 0,
+                                marginTop: 24,
+                                fontSize: 25,
+                                color: '#404040',
+                                lineHeight: 1.38,
+                                letterSpacing: '-0.012em',
+                            }}
+                        >
+                            Web and mobile products, end to end. React and Next.js in front, Node
+                            and FastAPI behind them, PostgreSQL underneath.
+                        </p>
+                    </div>
+
+                    {/* Metrics */}
+                    <div style={{ display: 'flex', gap: 40 }}>
+                        {metrics.slice(0, 3).map((m) => (
+                            <div key={m.value} style={{ maxWidth: 190 }}>
+                                <div
+                                    className="font-mono"
+                                    style={{
+                                        fontSize: 26,
+                                        fontWeight: 600,
+                                        color: '#0a0a0a',
+                                        letterSpacing: '-0.03em',
+                                        lineHeight: 1,
+                                    }}
+                                >
+                                    {m.value}
+                                </div>
+                                <div
+                                    style={{
+                                        marginTop: 9,
+                                        fontSize: 15,
+                                        color: '#404040',
+                                        lineHeight: 1.35,
+                                    }}
+                                >
+                                    {m.label}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div
+                        className="font-mono"
                         style={{
-                            margin: 0,
-                            fontSize: 96,
-                            fontWeight: 600,
-                            color: '#0a0a0a',
-                            letterSpacing: '-0.04em',
-                            lineHeight: 1,
-                        }}
-                    >
-                        {personal.role}.
-                    </h1>
-                    <p
-                        style={{
-                            margin: 0,
-                            marginTop: 32,
-                            fontSize: 30,
+                            display: 'flex',
+                            gap: 20,
+                            alignItems: 'baseline',
+                            fontSize: 17,
                             color: '#404040',
-                            lineHeight: 1.4,
-                            letterSpacing: '-0.01em',
-                            maxWidth: 980,
                         }}
                     >
-                        Product-minded engineer building full-stack web and mobile products with React, Next.js, TypeScript, and AI.
-                    </p>
+                        <span>Berlin, Germany</span>
+                        <span style={{ color: '#d4d4d8' }}>·</span>
+                        <span style={{ color: '#0a0a0a', fontWeight: 500 }}>erdemkarakas.dev</span>
+                    </div>
                 </div>
 
-                {/* Bottom row: city + url */}
-                <div
-                    className="font-mono"
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'baseline',
-                        fontSize: 18,
-                        color: '#404040',
-                    }}
-                >
-                    <span>Berlin</span>
-                    <span style={{ color: '#0a0a0a', fontWeight: 500 }}>erdemkarakas.dev</span>
+                {/* Right: portrait */}
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src={personal.photo}
+                        alt=""
+                        width={300}
+                        height={320}
+                        style={{
+                            width: 300,
+                            height: 320,
+                            objectFit: 'cover',
+                            objectPosition: 'center top',
+                            borderRadius: 16,
+                            filter: 'grayscale(1)',
+                            border: '1px solid #d4d4d8',
+                        }}
+                    />
                 </div>
             </div>
         </div>
